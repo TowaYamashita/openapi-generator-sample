@@ -1,16 +1,28 @@
 # openapi_generator_sample
 
-A new Flutter project.
+- openapi-generator-cli を使用してAPI提議書からコードを生成した場合、どのようなコードが生成されるか見る
+- dart版 と dart-dio版の2種類があるため、それぞれを別のブランチに分けた
 
-## Getting Started
+## feature/dart (dart版)
+- 以下のコマンドを実行し、生成したコードを追加
+```
+docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/openapitools/openapi-generator/master/modules/openapi-generator/src/test/resources/3_0/petstore.yaml \
+    -g dart \
+    -o /local/out
+```
 
-This project is a starting point for a Flutter application.
+- ref
+  - https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/dart.md
 
-A few resources to get you started if this is your first Flutter project:
+## feature/dart-dio (dart-dio版)
+- 以下のコマンドを実行し、生成したコードを追加
+```
+docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/openapitools/openapi-generator/master/modules/openapi-generator/src/test/resources/3_0/petstore.yaml \
+    -g dart-dio \
+    -o /local/out
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- ref
+  - https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/dart-dio.md
